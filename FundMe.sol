@@ -9,6 +9,7 @@ pragma solidity ^0.8.18;
 import {PriceConverter} from "./PriceConverter.sol";
 
 contract FundMe {
+    using PriceConverter for uint256;
 
     address [] public funders;
     mapping(address funder => uint256 amountFunded) public addressToAmountFunded;
