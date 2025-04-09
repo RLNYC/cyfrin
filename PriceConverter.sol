@@ -10,7 +10,9 @@ library PriceConverter{
     function getPrice() internal view returns (uint) {
         //address sepolia 0x694AA1769357215DE4FAC081bf1f309aDC325306
         //ABI
-        AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
+        AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306); 
+        // this price feed address is only for Sepolia testnet, need to change it if deployed o different blockchain
+        
         (, int256 price, , , ) = priceFeed.latestRoundData(); // only want to retrieve price
         //8 decimals in chainlink price, but msg.value has 18
         // price is int256, but msg.value is uint256=>need to use typecasting
